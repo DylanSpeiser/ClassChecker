@@ -35,6 +35,11 @@
             </form>
         </div>
         
+        <footer>
+            <p>A tool by Dylan Speiser</p>
+            <p>1.1</p>
+        </footer>
+        
         <script>
             function getSeatInfo(c) {
                 let Http = new XMLHttpRequest();
@@ -121,12 +126,11 @@
             function onLoad() {
                 if (document.cookie == '') {
                     
-                    let classes = [new ScheduleClass("CMSC216H","0101"),
-                       new ScheduleClass("ENGL101","9015"),
-                       new ScheduleClass("ENEE101","0105"),
-                       new ScheduleClass("PHYS260","0101"),
-                       new ScheduleClass("PHYS261","0104"),
-                       new ScheduleClass("HNUH288A","0101")];
+                    // classes=CMSC216H 0101,ENGL101 9015,ENEE101 0105,PHYS260 0101,PHYS261 0104,HNUH288A 0101
+                    let classes = [];
+                    
+                    updateTable();
+                    setTimeout(() => {  updateTable(); }, 10);
                 
                     storeCookie(classes,"classes");
                 } else {
