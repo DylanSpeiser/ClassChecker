@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>UMD Class Checker</title>
+        <link rel="stylesheet" rel="text/css" href="style.css">
     </head>
     <body onload="onLoad()">
-        <h1>UMD Class Checker</h1>
+        <div id="top">
+            <h1>UMD Class Checker</h1>
+        </div>
         
         <div id="Spring2022">
             <h4 class="SemesterString">Spring 2022</h4>
@@ -126,7 +129,6 @@
             function onLoad() {
                 if (document.cookie == '') {
                     
-                    // classes=CMSC216H 0101,ENGL101 9015,ENEE101 0105,PHYS260 0101,PHYS261 0104,HNUH288A 0101
                     let classes = [];
                     
                     updateTable();
