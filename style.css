@@ -1,12 +1,44 @@
-html {
+body {
     font-family: Trebuchet MS, sans-serif;
+    padding: 1%;
+    background-color: #f0f0f0;
 }
 
-body {
-    width: 100%;
+#form {
+    width: 30%;
+    border: solid 1px #000000;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    background-color: #c6c6c6;
+}
+
+#classEntry{
+    display: inline-block;
+    margin-right: 10%;
+}
+
+#sectionEntry {
+    display: inline-block;
+}
+
+.ScheduleTable {
+    display: flex;
 }
 
 #top {
-    background: #fa5a5a;
-    width: 100%;
+    background-color: #ff8383;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.SemesterString {
+    padding-left: 1rem;
+}
+
+.semesterDiv {
+    background-color: #ffffff;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    width: 58%;
 }
