@@ -42,3 +42,15 @@ body {
     border-radius: 1rem;
     width: 58%;
 }
+
+@media (max-width: 1200px) {
+    .semesterDiv {
+        width: 100%;
+        display: flex;
+    }
+    
+    table {
+        display: inline-block;
+        width: 100%;
+    }
+}
