@@ -1,17 +1,16 @@
 function getSeatInfo(c) {
     let Http = new XMLHttpRequest();
-    //let url = "https://api.umd.io/v1/courses/sections/"+c.classCode+"-"+c.section;
+    let url = "https://api.umd.io/v1/courses/sections/"+c.classCode+"-"+c.section;
     let splitCode = splitClassCode(c.classCode);
-    let url = "https://seats.courseoff.com/lookup?id="+c.section+"&un=umd&te=202201&su="+splitCode[0]+"&co="+splitCode[1];
     var json;
 
     Http.onload = function () {
         json = JSON.parse(Http.responseText);
 
         if (json != undefined) {
-            c.totalSeats = parseInt(json.c);
-            c.takenSeats = parseInt(json.t);
-            c.openSeats = c.totalSeats-c.takenSeats;
+            c.totalSeats = parseInt(json[0].seats);
+            c.openSeats = parseInt(json[0].open_seats);
+            c.takenSeats = c.totalSeats-c.openSeats;
             c.percentFull = (c.takenSeats / c.totalSeats)*100.0;
         } else {
             console.log("json was unefined for url "+url)
@@ -34,7 +33,7 @@ ScheduleClass.prototype.toString = function ClassToString() {
 }
 
 let classes = [];
-let table = document.getElementById("Spring2022").getElementsByClassName('ScheduleTable')[0];
+let table = document.getElementById("Fall2022").getElementsByClassName('ScheduleTable')[0];
 
 function updateTable() {
     let tabLen = table.rows.length;
@@ -107,7 +106,7 @@ function deleteClass(index) {
 }
 
 function storeCookie(a, name) {
-    document.cookie = (name+"="+a.toString()+"; expires=05 May 2022 23:00:00 UTC; path=/");
+    document.cookie = (name+"="+a.toString()+"; expires=05 Sep 2022 23:00:00 UTC; path=/");
 }
 
 function loadCookie(a,name) {
