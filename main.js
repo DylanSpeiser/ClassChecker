@@ -33,7 +33,7 @@ ScheduleClass.prototype.toString = function ClassToString() {
 }
 
 let classes = [];
-let table = document.getElementById("Fall2022").getElementsByClassName('ScheduleTable')[0];
+let table = document.getElementById("Spring2023").getElementsByClassName('ScheduleTable')[0];
 
 function updateTable() {
     let tabLen = table.rows.length;
