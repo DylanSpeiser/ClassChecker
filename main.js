@@ -107,7 +107,7 @@ function deleteClass(index) {
 }
 
 function storeCookie(a, name) {
-    document.cookie = (name+"="+a.toString()+"; expires=05 Sep 2022 23:00:00 UTC; path=/");
+    document.cookie = (name+"="+a.toString()+"; expires=05 Jan 2023 23:00:00 UTC; path=/");
 }
 
 function loadCookie(a,name) {
