@@ -1,6 +1,7 @@
 function getSeatInfo(c) {
     let Http = new XMLHttpRequest();
-    let url = "https://api.umd.io/v1/courses/sections/"+c.classCode+"-"+c.section;
+    let semestercode = "202301";
+    let url = "https://api.umd.io/v1/courses/sections/"+c.classCode+"-"+c.section+"?semester="+semestercode;
     let splitCode = splitClassCode(c.classCode);
     var json;
 
