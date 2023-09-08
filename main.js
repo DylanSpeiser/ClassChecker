@@ -1,6 +1,6 @@
 function getSeatInfo(c) {
     let Http = new XMLHttpRequest();
-    let semestercode = "202301";
+    let semestercode = "202308";
     let url = "https://api.umd.io/v1/courses/sections/"+c.classCode+"-"+c.section+"?semester="+semestercode;
     let splitCode = splitClassCode(c.classCode);
     var json;
@@ -34,7 +34,7 @@ ScheduleClass.prototype.toString = function ClassToString() {
 }
 
 let classes = [];
-let table = document.getElementById("Spring2023").getElementsByClassName('ScheduleTable')[0];
+let table = document.getElementById("Fall2023").getElementsByClassName('ScheduleTable')[0];
 
 function updateTable() {
     let tabLen = table.rows.length;
@@ -107,7 +107,7 @@ function deleteClass(index) {
 }
 
 function storeCookie(a, name) {
-    document.cookie = (name+"="+a.toString()+"; expires=05 Jan 2023 23:00:00 UTC; path=/");
+    document.cookie = (name+"="+a.toString()+"; expires=05 Jan 2024 23:00:00 UTC; path=/");
 }
 
 function loadCookie(a,name) {
